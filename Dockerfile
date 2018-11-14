@@ -1,6 +1,6 @@
 FROM node:8
 
-MAINTAINER Michael Williams <michael.williams@enspiral.com>
+ARG ssb_appname
 
 USER root
 RUN mkdir /home/node/.npm-global ; \
@@ -10,7 +10,7 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
 USER node
 RUN npm install -g ssbc/scuttlebot-release
-
+RUN mkdir /home/node/.$ssb_appname ; \
 EXPOSE 8008
 
 HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=10 \
