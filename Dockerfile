@@ -7,7 +7,7 @@ ENV PATH=/home/node/.npm-global/bin:$PATH
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
 USER node
-RUN npm install -g ssbc/scuttlebot-release
+RUN npm install -g ssbc/scuttlebot-release@~11.3.0
 RUN mkdir /home/node/.blockparty-pub
 EXPOSE 8008
 
